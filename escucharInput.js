@@ -52,4 +52,3 @@ function escucharInput() {
     poner_Total.textContent = mi_Total;
   });
 } //aca termina el listenner del Input}
-//modificando

@@ -17,9 +17,6 @@ function modificarCarro(indice, modifica_cantidad) {
   array_del_carro[indice].total = (
     modifica_cantidad * array_del_carro[indice].precio
   ).toFixed(2);
-  /*array_del_carro.forEach((prod) => {
-    console.log(prod);
-  });*/
 
   if (array_del_carro[indice].total == 0.0) {
     remueve_Nodo_Carro(indice);
@@ -40,4 +37,3 @@ function sumar_Total_Carro(sumando_Carro) {
     return acumulador + parseFloat(sumando_Carro.total);
   }, 0);
 }
-//modificando
