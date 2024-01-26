@@ -4,7 +4,7 @@ let carro_activado = false;
 let moneda = "";
 
 document.addEventListener("DOMContentLoaded", function () {
-  fetch("https://jsonblob.com/api/jsonBlob/1193194277579907072")
+  fetch("https://jsonblob.com/api/jsonBlob/1200241940141826048")
     .then((response) => response.json())
     .then((data) => {
       tomar_los_datos(data.products, data.currency);

@@ -1,18 +1,39 @@
 .body {
   display: flex;
 }
-.divPadre {
+.miDiv {
   display: flex;
-  justify-content: space-between;
 }
 
-.laTabla {
+.primer_tabla,
+.segunda_tabla {
   border-collapse: collapse;
-  width: 58%;
+  margin-right: 10px;
+}
+.primer_tabla {
+  background-color: rgb(205, 233, 247);
+}
+.segunda_tabla {
+  background-color: beige;
 }
 
+.laTabla2 {
+  margin-left: 10px;
+}
+
+.miInputEstilizado {
+  width: 60px; /* Ejemplo: ancho de 50px */
+  border: 1px solid #ccc; /* Ejemplo: borde gris */
+  background-color: rgb(244, 242, 247);
+  padding: 5px; /* Ejemplo: relleno de 5px */
+  /* Agrega más estilos según sea necesario */
+}
 .tabla_del_carro {
   border-collapse: collapse;
   width: 42%;
 }
-/*modificando
+
+.columna_tabla {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+}
