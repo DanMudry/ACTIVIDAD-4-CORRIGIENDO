@@ -1,39 +1,46 @@
-.body {
+.wrapper {
+  padding: 25px 50px;
   display: flex;
+  gap: 50px;
+  max-width: 1440px;
+  margin: auto;
+}
+
+.wrapper .miDiv {
+  width: 70%;
 }
 .miDiv {
-  display: flex;
+  background-color: rgb(237, 234, 229);
 }
 
-.primer_tabla,
-.segunda_tabla {
+.laTabla1 {
+  border-inline-color: white;
   border-collapse: collapse;
-  margin-right: 10px;
-}
-.primer_tabla {
-  background-color: rgb(205, 233, 247);
-}
-.segunda_tabla {
-  background-color: beige;
 }
 
-.laTabla2 {
-  margin-left: 10px;
+.style_tabla1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.miInputEstilizado {
-  width: 60px; /* Ejemplo: ancho de 50px */
-  border: 1px solid #ccc; /* Ejemplo: borde gris */
-  background-color: rgb(244, 242, 247);
-  padding: 5px; /* Ejemplo: relleno de 5px */
-  /* Agrega más estilos según sea necesario */
-}
-.tabla_del_carro {
-  border-collapse: collapse;
-  width: 42%;
+.celda_Titulo,
+.celda_Precio,
+.celda_Total {
+  font-size: 15px;
 }
 
+.celda_Precio,
+.celda_Total {
+  text-align: center;
+}
+
+.celda_Sku {
+  font-size: 12px;
+}
 .columna_tabla {
+  border-bottom: solid 1px color(white);
+  padding: 5px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 12px;
+  width: 200px;
+  background-color: rgb(168, 232, 243);
 }

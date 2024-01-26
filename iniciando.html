@@ -13,45 +13,39 @@
       </div>
     </header>
     <main class="wrapper">
-    <div class="miDiv">
-      <div class="primer_tabla">
-        <table class="laTabla1">
-          <!-- Encabezado de la tabla -->
-          <thead>
-            <tr>
-                <th class="columna_tabla">Producto</th>
-                <th class="columna_tabla">Cantidad</th>
-                 <th class="columna_tabla">Precio</th>
-                <th class="columna_tabla">Total</th>
-            </tr>
-          </thead>
+      <section class="miDiv">
+         <table class="laTabla1">
+            <!-- Encabezado de la tabla -->
+                <tr>
+                  <th class="columna_tabla">Producto</th>
+                  <th class="columna_tabla">Cantidad</th>
+                  <th class="columna_tabla">Precio</th>
+                  <th class="columna_tabla">Total</th>
+                </tr>
+            
 
-          <!-- Cuerpo de la tabla -->
-          <tbody id="cuerpoTabla"></tbody>
+          <!-- Cuerpo de la tabla 1 -->
+          <tbody class="style_tabla1" id="cuerpoTabla"></tbody>
         </table>
+      </section>
      <!-- termina primer tabla-->
 
-    </div>
-    <div class="segunda_tabla" id="carro_Total">
-      <table class="tabla_del_carro" id="tabla2" border="1">
-      
-      <thead>
-        <tr>
-          <th class="columna_tabla">Articulos</th>
-          <th class="columna_tabla">Importe</th>
-        </tr>
-      </thead>
-
-      <!-- Cuerpo de la tabla -->
-      <tbody id="cuerpo_Tabla_Carro"></tbody>
-    </table>
-  </div>
+    <section class="segunda_tabla" id="carro_Total">
+      <table class="tabla_del_carro" id="tabla2">
+            <tr>
+              <th class="columna_tabla">Articulos</th>
+              <th class="columna_tabla">Importe</th>
+            </tr>
+                <!-- Cuerpo de la tabla del Carro-->
+        <tbody id="cuerpo_Tabla_Carro"></tbody>
+      </table>
+    </section>
   <div class="el_Total" >
     El total de tu compra es
     <p class="columna_tabla" id="pongo_Total"></p>
     
   </div>
-  </div>
+ 
 
   <script src="armarTablaCarro.js"></script>
   <script src="escucharInput.js"></script>
