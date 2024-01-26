@@ -3,27 +3,23 @@
 }
 .miDiv {
   display: flex;
-
 }
-
 
 .primer_tabla,
-    .segunda_tabla {
-      border-collapse: collapse;
-        margin-right: 10px;
-    }
-.primer_tabla{
+.segunda_tabla {
+  border-collapse: collapse;
+  margin-right: 10px;
+}
+.primer_tabla {
   background-color: rgb(205, 233, 247);
 }
-.segunda_tabla{
+.segunda_tabla {
   background-color: beige;
 }
 
-.laTabla2{
+.laTabla2 {
   margin-left: 10px;
 }
-
-
 
 .miInputEstilizado {
   width: 60px; /* Ejemplo: ancho de 50px */
@@ -36,4 +32,8 @@
   border-collapse: collapse;
   width: 42%;
 }
-/*modificando
+
+.columna_tabla {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+}

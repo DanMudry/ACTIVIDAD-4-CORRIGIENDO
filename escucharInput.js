@@ -1,5 +1,6 @@
 function escucharInput() {
   const escucha = document.getElementById("cuerpoTabla");
+  escucha.classList.add("miInputEstilizado");
 
   escucha.addEventListener("input", (event) => {
     const targetEs = event.target;
@@ -45,6 +46,10 @@ function escucharInput() {
       armar_Tabla_Carro(array_del_carro.length - 1);
       //armo_Total_Carro();
     }
+    const mi_Total = sumar_Total_Carro(array_del_carro).toFixed(2);
+    console.log("total de tu compra *******----" + mi_Total);
+    const poner_Total = document.getElementById("pongo_Total");
+    poner_Total.textContent = mi_Total;
   });
 } //aca termina el listenner del Input}
 //modificando
