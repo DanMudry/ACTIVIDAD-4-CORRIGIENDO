@@ -30,21 +30,14 @@ function escucharInput() {
     const indice_del_articulo = array_del_carro.findIndex(
       (producto) => producto.sku === dataIde
     );
-    console.log("este es el indice ==> " + indice_del_articulo);
 
     if (indice_del_articulo !== -1) {
       modificarCarro(indice_del_articulo, inputCantidad.value);
-      console.log(
-        "estoy al principio del input #### " + array_del_carro.length
-      );
-
-      //armo_Total_Carro();
     } else {
       console.log("el precio antes de el carro " + precioArticulo.price);
       carro_activado = true;
       agregarAlCarro(dataIde, inputCantidad.value, precioArticulo.price);
       armar_Tabla_Carro(array_del_carro.length - 1);
-      //armo_Total_Carro();
     }
     const mi_Total = sumar_Total_Carro(array_del_carro).toFixed(2);
     console.log("total de tu compra *******----" + mi_Total);
