@@ -13,7 +13,6 @@ function armar_Tabla_Carro(indice_Agregar) {
   title_Carro.textContent = art_Carro.title;
   title_Carro.setAttribute("id", array_del_carro[indice_Agregar].sku + "title");
 
-  console.log("title de los armados --> " + art_Carro.title);
   fila_Carro.append(title_Carro);
 
   const total_Linea_Carro = document.createElement("td");
@@ -38,7 +37,6 @@ function modifica_Tabla_Carro(indice) {
 }
 
 function remueve_Nodo_Carro(indice) {
-  console.log("Estoy Borrando un Nodo");
   var fila_Borrar = document.getElementById("cuerpo_Tabla_Carro");
   var nodo_Borrar = document.getElementById(
     array_del_carro[indice].sku + "fila"

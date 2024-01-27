@@ -17,8 +17,7 @@ function escucharInput() {
     const celdaSubTotal = document.querySelector('[data-id="' + dataIde + '"]');
     const nuevoValor = Math.max(0, inputCantidad.value);
     inputCantidad.value = nuevoValor;
-    console.log("data id del Input -->" + inputCantidad.dataset.id);
-    console.log("estoy afuera de todo -->" + inputCantidad.value);
+
     const modificaPrecio = document.getElementById(dataIde);
     const precioArticulo = libreriaArticulos.find(
       (articuloBuscado) => articuloBuscado.SKU === dataIde
@@ -30,17 +29,21 @@ function escucharInput() {
     const indice_del_articulo = array_del_carro.findIndex(
       (producto) => producto.sku === dataIde
     );
+    console.log(
+      "Indice " + indice_del_articulo + "Valor " + inputCantidad.value
+    );
 
     if (indice_del_articulo !== -1) {
       modificarCarro(indice_del_articulo, inputCantidad.value);
     } else {
-      console.log("el precio antes de el carro " + precioArticulo.price);
-      carro_activado = true;
-      agregarAlCarro(dataIde, inputCantidad.value, precioArticulo.price);
-      armar_Tabla_Carro(array_del_carro.length - 1);
+      if (indice_del_articulo == -1 && inputCantidad.value != 0) {
+        carro_activado = true;
+        agregarAlCarro(dataIde, inputCantidad.value, precioArticulo.price);
+        armar_Tabla_Carro(array_del_carro.length - 1);
+      }
     }
     const mi_Total = sumar_Total_Carro(array_del_carro).toFixed(2);
-    console.log("total de tu compra *******----" + mi_Total);
+
     const poner_Total = document.getElementById("pongo_Total");
     poner_Total.textContent = mi_Total;
   });
