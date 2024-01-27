@@ -9,10 +9,12 @@ function crearTabla(arrayDeArticulos) {
     // Crear y agregar celdas a la fila
     const celdaTitle = document.createElement("td");
     celdaTitle.textContent = articulo.title;
+    celdaTitle.classList.add("celda_Titulo");
     nuevaFila.append(celdaTitle);
 
     const celdaSKU = document.createElement("p");
     celdaSKU.textContent = articulo.SKU;
+    celdaSKU.classList.add("celda_Sku");
     celdaTitle.append(celdaSKU);
     debugger;
     const celdaInput = document.createElement("td");
@@ -30,11 +32,13 @@ function crearTabla(arrayDeArticulos) {
     const celdaPrice = document.createElement("td");
 
     celdaPrice.setAttribute("data-id", articulo.SKU);
+    celdaPrice.classList.add("celda_Precio");
     celdaPrice.textContent = articulo.price + moneda;
     nuevaFila.append(celdaPrice);
 
     const celdaTotal = document.createElement("td");
     celdaTotal.id = articulo.SKU;
+    celdaTotal.classList.add("celda_Total");
     celdaTotal.textContent = 0 + moneda;
     nuevaFila.append(celdaTotal);
 

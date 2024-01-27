@@ -20,7 +20,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     crearTabla(libreriaArticulos);
     escucharInput();
-    console.log("aca nunca vuelvo************************************");
   }
 });
-//modificando
