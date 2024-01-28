@@ -15,40 +15,51 @@ function escucharInput() {
       '[data-id="' + dataIde + '-cantidad"]'
     );
     const celdaSubTotal = document.querySelector('[data-id="' + dataIde + '"]');
-    const nuevoValor = Math.max(0, inputCantidad.value);
-    inputCantidad.value = nuevoValor;
-    console.log("data id del Input -->" + inputCantidad.dataset.id);
-    console.log("estoy afuera de todo -->" + inputCantidad.value);
-    const modificaPrecio = document.getElementById(dataIde);
-    const precioArticulo = libreriaArticulos.find(
-      (articuloBuscado) => articuloBuscado.SKU === dataIde
+    //const nuevoValor = Math.max(0, inputCantidad.value);
+    //inputCantidad.value = nuevoValor;
+    console.log(
+      "estoy mostrando como esta el Value --->" + inputCantidad.value
     );
-
-    modificaPrecio.textContent =
-      (inputCantidad.value * precioArticulo.price).toFixed(2) + moneda;
-
-    const indice_del_articulo = array_del_carro.findIndex(
-      (producto) => producto.sku === dataIde
-    );
-    console.log("este es el indice ==> " + indice_del_articulo);
-
-    if (indice_del_articulo !== -1) {
-      modificarCarro(indice_del_articulo, inputCantidad.value);
-      console.log(
-        "estoy al principio del input #### " + array_del_carro.length
+    if (inputCantidad.value >= 0) {
+      //que comience el if controlando inputCantidad.value
+      const modificaPrecio = document.getElementById(dataIde);
+      const precioArticulo = libreriaArticulos.find(
+        (articuloBuscado) => articuloBuscado.SKU === dataIde
       );
 
-      //armo_Total_Carro();
-    } else {
-      console.log("el precio antes de el carro " + precioArticulo.price);
-      carro_activado = true;
-      agregarAlCarro(dataIde, inputCantidad.value, precioArticulo.price);
-      armar_Tabla_Carro(array_del_carro.length - 1);
-      //armo_Total_Carro();
+      modificaPrecio.textContent =
+        (inputCantidad.value * precioArticulo.price).toFixed(2) + moneda;
+
+      /*const indice_del_articulo = array_del_carro.findIndex(
+        (producto) => producto.sku === dataIde
+      );*/
+      indice_del_articulo = -1;
+      for (let i = 0; i < array_del_carro.length; i++) {
+        if (array_del_carro[i].sku === dataIde) {
+          indice_del_articulo = i;
+        }
+      }
+
+      console.log(
+        "Indice " + indice_del_articulo + "Valor " + inputCantidad.value
+      );
+
+      if (indice_del_articulo !== -1) {
+        modificarCarro(indice_del_articulo, inputCantidad.value, dataIde);
+      } else {
+        //if (indice_del_articulo == -1 && inputCantidad.value != 0) {
+        carro_activado = true;
+        agregarAlCarro(dataIde, inputCantidad.value, precioArticulo.price);
+        armar_Tabla_Carro(array_del_carro.length - 1);
+        //}
+      }
+      const mi_Total = sumar_Total_Carro(array_del_carro).toFixed(2);
+
+      const poner_Total = document.getElementById("pongo_Total");
+      poner_Total.textContent = mi_Total;
+    } // termina el if de control de inputCantidad.value
+    else {
+      inputCantidad.value = 0;
     }
-    const mi_Total = sumar_Total_Carro(array_del_carro).toFixed(2);
-    console.log("total de tu compra *******----" + mi_Total);
-    const poner_Total = document.getElementById("pongo_Total");
-    poner_Total.textContent = mi_Total;
   });
-} //aca termina el listenner del Input}
+}
