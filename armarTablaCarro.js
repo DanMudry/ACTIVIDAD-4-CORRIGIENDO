@@ -1,11 +1,10 @@
 function armar_Tabla_Carro(indice_Agregar) {
   const inicio_Carro = document.getElementById("cuerpo_Tabla_Carro");
 
-  // Crear un nuevo elemento <tr> una fila
   const fila_Carro = document.createElement("tr");
   fila_Carro.setAttribute("id", array_del_carro[indice_Agregar].sku + "fila");
   inicio_Carro.append(fila_Carro);
-  // Crear y agregar celdas a la fila
+
   const title_Carro = document.createElement("td");
 
   const art_Carro = encuentra_Articulo(array_del_carro[indice_Agregar].sku);
@@ -37,8 +36,8 @@ function modifica_Tabla_Carro(indice) {
 }
 
 function remueve_Nodo_Carro(indice) {
-  var fila_Borrar = document.getElementById("cuerpo_Tabla_Carro");
-  var nodo_Borrar = document.getElementById(
+  const fila_Borrar = document.getElementById("cuerpo_Tabla_Carro");
+  const nodo_Borrar = document.getElementById(
     array_del_carro[indice].sku + "fila"
   );
   fila_Borrar.removeChild(nodo_Borrar);
