@@ -55,4 +55,16 @@ function maldito_total(mi_maldito_array) {
   mi_Total = sumar_Total_Carro(array_del_carro).toFixed(2);
   const poner_Total = document.getElementById("pongo_Total");
   poner_Total.textContent = mi_Total + moneda;
+  carro_activado = mi_Total > 0 ? true : false;
+  if (!carro_activado) {
+    a_Comprar();
+  }
+}
+
+function a_Comprar() {
+  const compra_algo = document.getElementById("carro_sin_nada");
+  const mensaje = document.createElement("p");
+  mensaje.textContent =
+    "Tu CARRITO esta vacio! Es hora que te compres una tabla y te vayas a SURFEAR!!";
+  compra_algo.append(mensaje);
 }

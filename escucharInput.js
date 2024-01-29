@@ -55,7 +55,6 @@ function escucharInput() {
         } else {
           carro_activado = true;
           agregarAlCarro(dataIde, inputCantidad.value, precioArticulo.price);
-
           armar_Tabla_Carro(array_del_carro.length - 1);
         }
       } // termina el if de control de inputCantidad.value

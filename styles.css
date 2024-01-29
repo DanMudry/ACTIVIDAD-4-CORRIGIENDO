@@ -18,7 +18,9 @@
   border-collapse: collapse;
 }
 
-.style_tabla1 {
+.style_tabla1,
+.el_Total,
+.carro_vacio {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
