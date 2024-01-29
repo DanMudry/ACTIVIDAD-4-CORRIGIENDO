@@ -40,8 +40,8 @@ function escucharInput() {
 
       !!!FELIX!!! no se por que esto me daba un (-1) siendo que el articulo estaba, entonces
       se me iba a la funcion agregarAlCarro, siendo que no tenia que ir, de esa manera me pintaba
-      un nodo nuevo y bueno.... recurri a mi buen amigo de toda la vida el For comun y silvestre, he tirado
-      unas cuantas horas con esto. Sorry!!! */
+      un nodo nuevo que no correspondia y bueno.... recurri a mi buen amigo de toda la vida el For comun y silvestre, he tirado
+      unas cuantas horas con esto. Sorry please.... por lo menos no te puse ningun await!!! */
         indice_del_articulo = -1;
         for (let i = 0; i < array_del_carro.length; i++) {
           if (array_del_carro[i].sku === dataIde) {
@@ -61,7 +61,7 @@ function escucharInput() {
       else {
         inputCantidad.value = 0;
       }
-      maldito_total(array_del_carro);
+      calcula_total(array_del_carro);
     }); //aca termina el evento
     resolve();
   });

@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     crearTabla(libreriaArticulos);
     escucharInput().then(() => {
-      maldito_total();
+      calcula_total();
     });
   }
 });

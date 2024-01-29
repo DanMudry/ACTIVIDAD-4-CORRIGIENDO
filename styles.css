@@ -9,7 +9,8 @@
 .wrapper .miDiv {
   width: 70%;
 }
-.miDiv {
+.miDiv,
+.segunda_tabla {
   background-color: rgb(237, 234, 229);
 }
 
@@ -44,4 +45,10 @@
   font-size: 12px;
   width: 252px;
   background-color: rgb(168, 232, 243);
+}
+
+.heading-3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
 }
