@@ -19,10 +19,7 @@ function modificarCarro(indice, modifica_cantidad, sku_borrar) {
 
   if (array_del_carro[indice].total == 0.0) {
     remueve_Nodo_Carro(indice);
-    array_del_carro.filter(
-      array_del_carro[indice] != sku_borrar
-    ); /* lo habia hecho con splice
-    pero me borraba un elemento de mas, lo cambie a filter*/
+    array_del_carro.filter(array_del_carro[indice] != sku_borrar);
   } else {
     modifica_Tabla_Carro(indice);
   }

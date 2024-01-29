@@ -41,26 +41,25 @@ function remueve_Nodo_Carro(indice) {
   const nodo_Borrar = document.getElementById(
     array_del_carro[indice].sku + "fila"
   );
-  fila_Borrar.removeChild(nodo_Borrar);
-  array_del_carro.splice(indice, 1);
-  calcula_total(array_del_carro);
+  fila_Borrar.removeChild(nodo_Borrar); //modifico el DOM
+  array_del_carro.splice(indice, 1); //lo saco de [array_del_carro]
+  calcula_total(array_del_carro); //sumo el total que hay en el carro y modifico DOM
 }
 
-function calcula_total(mi_maldito_array) {
+function calcula_total(array_del_carro) {
   mi_Total = sumar_Total_Carro(array_del_carro).toFixed(2);
   const poner_Total = document.getElementById("pongo_Total");
   poner_Total.textContent = mi_Total + moneda;
 }
 
 function crearTabla(arrayDeArticulos) {
-  // Obtener el div donde se agregarán los párrafos
   const miDiv = document.getElementById("cuerpoTabla");
-  // Recorrer el array de artículos
+
   arrayDeArticulos.forEach((articulo) => {
-    // Crear un nuevo elemento <tr> una fila
+    // Creo fila
     const nuevaFila = document.createElement("tr");
     miDiv.append(nuevaFila);
-    // Crear y agregar celdas a la fila
+    // Creo celdas a la fila
     const celdaTitle = document.createElement("td");
     celdaTitle.textContent = articulo.title;
     celdaTitle.classList.add("celda_Titulo");
@@ -70,7 +69,7 @@ function crearTabla(arrayDeArticulos) {
     celdaSKU.textContent = articulo.SKU;
     celdaSKU.classList.add("celda_Sku");
     celdaTitle.append(celdaSKU);
-    debugger;
+
     const celdaInput = document.createElement("td");
 
     const btnIngresa = document.createElement("input");
@@ -91,7 +90,7 @@ function crearTabla(arrayDeArticulos) {
     nuevaFila.append(celdaPrice);
 
     const celdaTotal = document.createElement("td");
-    celdaTotal.id = articulo.SKU;
+    celdaTotal.id = articulo.SKU; // a esta celda en su id meto el SKU para poder tomarme y modificar el DOM.
     celdaTotal.classList.add("celda_Total");
     celdaTotal.textContent = 0 + moneda;
     nuevaFila.append(celdaTotal);

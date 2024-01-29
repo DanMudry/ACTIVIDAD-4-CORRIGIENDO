@@ -11,8 +11,9 @@ function escucharInput() {
       targetEs.classList.add("miInputEstilizado");
 
       const dataIde = targetEs.dataset.id;
+      //en dataIde guardo el target del evento, que es el SKU del articulo en donde se produjo el evento
 
-      const queHago = targetEs.id;
+      //const queHago = targetEs.id;
 
       const inputCantidad = document.querySelector(
         '[data-id="' + dataIde + '"]'
@@ -25,14 +26,15 @@ function escucharInput() {
       );
 
       if (inputCantidad.value >= 0) {
-        //que comience el if controlando inputCantidad.value
         const modificaPrecio = document.getElementById(dataIde);
+        //tengo todo con data-id=SKU del evento para agarrarme, menos la celda en donde se va modificando el precio en la tabla 1
+        //en esa celda el id es el SKU, entonces me puedo agarrar, es el unico elemento que tiene como id el SKU del evento
         const precioArticulo = libreriaArticulos.find(
           (articuloBuscado) => articuloBuscado.SKU === dataIde
-        );
+        ); //busco en libreriaArticulos el producto donde se produjo el evento asi me traigo el precio
 
         modificaPrecio.textContent =
-          (inputCantidad.value * precioArticulo.price).toFixed(2) + moneda;
+          (inputCantidad.value * precioArticulo.price).toFixed(2) + moneda; //modifico el DOM en la tabla 1
 
         /*const indice_del_articulo = array_del_carro.findIndex(
         (producto) => producto.sku === dataIde
@@ -48,20 +50,21 @@ function escucharInput() {
             indice_del_articulo = i;
             i = array_del_carro.length;
           }
-        }
+        } //me traigo el indice de donde esta el articulo en el [array_del_carro] en este array voy guardando lo que va seleccionando
 
         if (indice_del_articulo !== -1) {
-          modificarCarro(indice_del_articulo, inputCantidad.value, dataIde);
+          modificarCarro(indice_del_articulo, inputCantidad.value, dataIde); //el articulo esta en [array_del_carro]
         } else {
-          carro_activado = true;
-          agregarAlCarro(dataIde, inputCantidad.value, precioArticulo.price);
+          agregarAlCarro(dataIde, inputCantidad.value, precioArticulo.price); //el articulo no esta en [array_del_carro]
           armar_Tabla_Carro(array_del_carro.length - 1);
+          //como el articulo no estaba entonces en "agregar..." hago push a un nuevo objeto,
+          //de esa manera ya se que esta en la ultima posicion de [array_del_carro], envio el indice length-1
         }
       } // termina el if de control de inputCantidad.value
       else {
-        inputCantidad.value = 0;
+        inputCantidad.value = 0; // si se hizo click en la flecha para abajo y la cantidad estaba en 0, repinto la celda para que no salga el -1
       }
-      calcula_total(array_del_carro);
+      calcula_total(array_del_carro); //esta funcion calcula el total de la compra y modifica el DOM
     }); //aca termina el evento
     resolve();
   });
