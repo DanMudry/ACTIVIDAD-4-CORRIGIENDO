@@ -33,6 +33,7 @@ function modifica_Tabla_Carro(indice) {
     array_del_carro[indice].sku + "total"
   );
   art_Modificar.textContent = array_del_carro[indice].total + moneda;
+  maldito_total(array_del_carro);
 }
 
 function remueve_Nodo_Carro(indice) {
@@ -42,5 +43,16 @@ function remueve_Nodo_Carro(indice) {
   );
   fila_Borrar.removeChild(nodo_Borrar);
   array_del_carro.splice(indice, 1);
+  maldito_total(
+    array_del_carro
+  ); /*Felix, no sabes lo que me llevo encontrar el lugar donde poner esto
+  el problema que tenia es que cuando un articulo pasaba de 1 a 0, me quedaba la suma del carro atrasada
+  en ese articulo que paso de 1 a 0 -- Perdon por el nombre, de la funcion, pero realmente !Maldito Total!!
+  Me di cuenta por que la situacion era cuando el articulo pasaba de 1 a 0, en ese caso el nodo hay que removerlo*/
 }
-//modificando
+
+function maldito_total(mi_maldito_array) {
+  mi_Total = sumar_Total_Carro(array_del_carro).toFixed(2);
+  const poner_Total = document.getElementById("pongo_Total");
+  poner_Total.textContent = mi_Total + moneda;
+}

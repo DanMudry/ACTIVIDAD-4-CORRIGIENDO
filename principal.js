@@ -2,6 +2,7 @@ let libreriaArticulos = [];
 let array_del_carro = [];
 let carro_activado = false;
 let moneda = "";
+let mi_Total;
 
 document.addEventListener("DOMContentLoaded", function () {
   fetch("https://jsonblob.com/api/jsonBlob/1200241940141826048")
@@ -19,6 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     crearTabla(libreriaArticulos);
-    escucharInput();
+    escucharInput().then(() => {
+      maldito_total();
+    });
   }
 });
